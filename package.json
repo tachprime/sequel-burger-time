@@ -1,0 +1,37 @@
+{
+  "name": "sequel-burger-time",
+  "version": "1.0.0",
+  "description": "burger time app now using sequelize ORM instead",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "6.9.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tachprime/sequel-burger-time.git"
+  },
+  "keywords": [
+    "sequelize",
+    "ORM",
+    "node",
+    "express",
+    "mysql"
+  ],
+  "author": "Alex Rivera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tachprime/sequel-burger-time/issues"
+  },
+  "homepage": "https://github.com/tachprime/sequel-burger-time#readme",
+  "dependencies": {
+    "body-parser": "1.16.0",
+    "express": "4.14.1",
+    "express-handlebars": "3.0.0",
+    "mysql": "2.13.0",
+    "sequelize": "3.30.1"
+  }
+}

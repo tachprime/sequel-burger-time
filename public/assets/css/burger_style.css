@@ -1,0 +1,28 @@
+.center {
+	text-align: center;
+}
+
+.burger-list-box {
+	background-color: #6f6f6f;
+	margin: 0 auto;
+	padding: .5em 1em;
+	min-height: 10em;
+}
+
+.burger-list-box ul li {
+	padding: 1em;
+}
+
+#burgerInput, #submitBurger {
+	margin: .5em auto;
+	width: 100%;
+	padding: .25em;
+}
+
+#eatForm {
+	float: right;
+}
+
+#eatButton {
+	height: 2em;
+}
