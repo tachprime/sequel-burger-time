@@ -42,6 +42,15 @@
 
 	<div class="row col-sm-12">
 		<h2 class="center">Add a new burger to the list</h2>
+		<div id="error-msg">
+		{{#each msg}}
+			{{#unless valid}}
+			<span class="center label label-danger">
+			{{error}}
+			</span>
+			{{/unless}}
+		{{/each}}
+		</div>
 		<form name="burgerForm" id="burgerForm" action="/add" method="POST">
 			<input type="text" name="burger_name" id="burgerInput">
 			<button class="btn btn-success" type="submit" id="submitBurger">Submit</button>
