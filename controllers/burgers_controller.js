@@ -7,35 +7,35 @@ const bodyParser = require('body-parser');
 var valid = true;
 var error = "Please fill out before submitting";
 
-router.use(bodyParser.urlencoded({
-    extended: true
-}));
+router.use(bodyParser.urlencoded({extended: true}));
 
 router.get('/', function (req, res) {
+
     burger.getAllBurgers(function (data) {
-        //console.log(data[0].dataValues);
-        res.render('index', {
+
+        var hbsTmp = {
             burgers: data,
-            msg: [{valid: valid, error: error}]
-        });
+            msg: [{ valid: valid, error: error }]
+        };
+
+        res.render('index', hbsTmp);
+
         valid = true;
-        console.log(valid);
-        
+
     });
 });
 
 router.post('/add', function (req, res) {
+
     var name = req.body.burger_name;
-    valid = true;
 
     burger.addBurger(name, function (err) {
         if (err) {
-            //console.log(err);
-            
+
             valid = false;
-        }  
-        console.log(valid);
-        
+
+        }
+
         res.redirect('/');
     });
 
@@ -49,12 +49,9 @@ router.post('/devour/:id', function (req, res) {
     };
 
     burger.devourBurger(ateBurger.id, ateBurger.devoured, function (err) {
-        console.log(err);
-        if (err) {
-            res.send(err);
-        } else {
-            res.redirect('/');
-        }
+        if (err) console.log(err);
+
+        res.redirect('/');
     });
 
 });
@@ -69,4 +66,3 @@ router.use(function (err, req, res) {
 });
 
 module.exports = router;
-s = router;

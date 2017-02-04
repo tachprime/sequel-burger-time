@@ -1,4 +1,3 @@
-//jshint esversion:6
 var Sequelize = require('sequelize');
 var connection = require('../config/connection');
 
@@ -66,7 +65,6 @@ var burger = {
 };
 
 burgers.sync({
-    //force: true,
     logging: console.log
 }).then(function () {
     console.log("syncing burger model");
