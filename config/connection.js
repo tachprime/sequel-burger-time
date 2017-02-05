@@ -1,7 +1,7 @@
 var Sequelize = require('sequelize');
 var env;
 if (process.env.JAWSDB_URL)
-    env = "JAWSDB_URL";
+    env = "production";
 else {
     env = 'development';
 }
