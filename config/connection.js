@@ -1,5 +1,10 @@
 var Sequelize = require('sequelize');
-var env = process.env.JAWSDB_URL || 'development';
+var env;
+if (process.env.JAWSDB_URL)
+    env = "JAWSDB_URL";
+else {
+    env = 'development';
+}
 var config = require('./config')[env];
 var connection;
 
@@ -15,14 +20,14 @@ if (config.use_env_variable) {
     });
 }
 
-connection.authenticate().then(function(err) {
+connection.authenticate().then(function (err) {
 
-        console.log('Connection has been established successfully.');
+    console.log('Connection has been established successfully.');
 
-    }).catch(function(err) {
+}).catch(function (err) {
 
-        console.log('Unable to connect to the database:', err);
-        
-    });
+    console.log('Unable to connect to the database:', err);
+
+});
 
 module.exports = connection;
