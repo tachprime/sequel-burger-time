@@ -13,10 +13,8 @@ var burgers = connection.define('burgers', {
         allowNull: false,
         validate: {
             //check if no name was entered in browser
-            nameCheck: function (name) {
-                if (name === "" || name === " ") {
-                    throw new Error("the name can not be empty");
-                }
+            notEmpty:{
+                msg: "Name can't be empty"
             }
         }
     },
@@ -47,6 +45,8 @@ var burger = {
         }).then(function () {
             callback();
         }).catch(function (err) {
+            console.log(err.message);
+            
             callback(err);
         });
     },
